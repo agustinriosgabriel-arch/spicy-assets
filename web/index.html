@@ -1,0 +1,1519 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Base de Contenido · Spicy Marketing</title>
+<meta name="description" content="Base de campañas, creadores, copys y piezas publicadas de Spicy Marketing.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="spicy_logo_firma.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --bg:#F2F1F5;
+    --surface:#FFFFFF;
+    --surface-2:#FAF9FC;
+    --ink:#191725;
+    --ink-2:#3B3750;
+    --muted:#6E6A82;
+    --line:#E0DEE8;
+    --line-strong:#CFCBDC;
+    --accent:#5B34E8;
+    --accent-soft:#EDE8FF;
+    --ok:#12795A;
+    --tt:#0E8A91;
+    --ig:#C42A72;
+    --yt:#C33232;
+    --fb:#2A57B8;
+    --th:#514C66;
+    --x:#2E2A3C;
+    --otro:#7A5A12;
+    --warn:#A66A00;
+    --warn-soft:#FDF3DF;
+    --head-bg:#262238;
+    --head-ink:#C3BCE0;
+    --shadow:0 1px 2px rgba(25,23,37,.05), 0 8px 24px -16px rgba(25,23,37,.28);
+    --pop-shadow:0 12px 40px -12px rgba(25,23,37,.4);
+    --logo-chip:transparent;
+    --logo-pad:0px;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#100F16; --surface:#1A1823; --surface-2:#211E2C;
+      --ink:#EDEBF4; --ink-2:#C7C2D8; --muted:#9691AB;
+      --line:#2C2939; --line-strong:#3D3950;
+      --accent:#A491FF; --accent-soft:#2A2340;
+      --ok:#48D3A0;
+      --tt:#3FDCE4; --ig:#FF7DB4; --yt:#FF7B7B; --fb:#7BA4FF; --th:#B3ADC9; --x:#CFC9E0; --otro:#E0B764;
+      --warn:#E8B45C; --warn-soft:#332A16;
+      --head-bg:#332C4C; --head-ink:#D6CFF2;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+      --pop-shadow:0 14px 44px -10px rgba(0,0,0,.8);
+      --logo-chip:#FFFFFF; --logo-pad:5px 9px;
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#100F16; --surface:#1A1823; --surface-2:#211E2C;
+    --ink:#EDEBF4; --ink-2:#C7C2D8; --muted:#9691AB;
+    --line:#2C2939; --line-strong:#3D3950;
+    --accent:#A491FF; --accent-soft:#2A2340;
+    --ok:#48D3A0;
+    --tt:#3FDCE4; --ig:#FF7DB4; --yt:#FF7B7B; --fb:#7BA4FF; --th:#B3ADC9; --x:#CFC9E0; --otro:#E0B764;
+    --warn:#E8B45C; --warn-soft:#332A16;
+    --head-bg:#332C4C; --head-ink:#D6CFF2;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+    --pop-shadow:0 14px 44px -10px rgba(0,0,0,.8);
+    --logo-chip:#FFFFFF; --logo-pad:5px 9px;
+    color-scheme:dark;
+  }
+
+  *{box-sizing:border-box}
+  img{max-width:100%}
+  [hidden]{display:none!important}
+  html,body{margin:0}
+  body{background:var(--bg);color:var(--ink);
+    font-family:"Public Sans","Helvetica Neue",Arial,sans-serif;
+    font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .shell{max-width:1500px;margin:0 auto;padding-inline:16px;
+    padding-block:28px calc(64px + env(safe-area-inset-bottom, 0px))}
+
+  header.top{display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px 24px;margin-bottom:22px}
+  .brandmark{display:flex;align-items:center;gap:14px}
+  .logo{flex:none;background:var(--logo-chip);padding:var(--logo-pad);border-radius:9px;line-height:0}
+  .logo img{height:32px;width:auto;display:block}
+  h1{font-family:"Archivo",sans-serif;font-weight:700;font-size:25px;letter-spacing:-.02em;margin:0;text-wrap:balance}
+  .sub{color:var(--muted);font-size:13px;margin:2px 0 0}
+
+  .stats{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
+  .stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px 13px;min-width:76px}
+  .stat b{display:block;font-family:"JetBrains Mono",ui-monospace,monospace;font-weight:500;font-size:19px;
+          letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.2}
+  .stat span{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+  .stat.good b{color:var(--ok)}
+  .stat.flag b{color:var(--warn)}
+
+  .toolbar{position:sticky;top:0;z-index:30;
+    background:var(--bg);padding-block:10px 12px;
+    display:flex;flex-wrap:wrap;gap:8px;align-items:center;border-bottom:1px solid var(--line)}
+  .field{position:relative;display:flex;align-items:center}
+  .field svg{position:absolute;left:10px;width:14px;height:14px;color:var(--muted);pointer-events:none}
+  input.search{padding:9px 12px 9px 30px;min-width:220px}
+  input.search,select.filter{font:inherit;color:var(--ink);background:var(--surface);
+    border:1px solid var(--line-strong);border-radius:9px;height:36px}
+  select.filter{padding:0 28px 0 10px;appearance:none;
+    background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);
+    background-position:calc(100% - 15px) 16px,calc(100% - 10px) 16px;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+  input.search:focus-visible,select.filter:focus-visible,.btn:focus-visible,
+  td input:focus-visible,td textarea:focus-visible,.iconbtn:focus-visible,.msel:focus-visible,.chk:focus-visible,
+  .popopt:focus-within{outline:2px solid var(--accent);outline-offset:1px}
+  .grow{flex:1 1 auto}
+  .btn{font:inherit;font-weight:500;height:36px;padding:0 14px;border-radius:9px;cursor:pointer;
+    border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);
+    display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  :root[data-theme="dark"] .btn.primary{color:#15121F}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary{color:#15121F}}
+  .btn.primary:hover{filter:brightness(1.08)}
+  .btn.quiet{border-style:dashed;color:var(--muted)}
+  .saveflag{font-size:12px;color:var(--muted);font-family:"JetBrains Mono",monospace;min-width:62px;text-align:right}
+  .saveflag.on{color:var(--accent)}
+
+  .notice{display:flex;gap:10px;align-items:flex-start;background:var(--warn-soft);color:var(--warn);
+    border:1px solid color-mix(in srgb,var(--warn) 30%,transparent);border-radius:11px;
+    padding:10px 14px;margin-bottom:14px;font-size:13px}
+  .notice button{margin-left:auto;border:0;background:transparent;color:inherit;cursor:pointer;font:inherit;padding:0 4px}
+
+  .tablewrap{overflow:auto;max-height:calc(100vh - 200px);min-height:260px;margin-top:12px;
+    background:var(--surface);border:1px solid var(--line);
+    border-radius:14px;box-shadow:var(--shadow);overscroll-behavior:contain}
+  table{border-collapse:separate;border-spacing:0;width:100%;min-width:2510px}
+  thead th{position:sticky;top:0;z-index:10;
+    background:var(--head-bg);text-align:left;font-family:"Archivo",sans-serif;font-weight:600;
+    font-size:10.5px;text-transform:uppercase;letter-spacing:.09em;color:var(--head-ink);
+    padding:12px;border-bottom:2px solid var(--accent);white-space:nowrap}
+  thead th.key{z-index:12;left:0;border-right:1px solid color-mix(in srgb,var(--head-ink) 22%,transparent)}
+  td{border-bottom:1px solid var(--line);padding:0;vertical-align:middle;background:var(--surface)}
+  tbody tr:last-child td{border-bottom:0}
+  tbody tr:hover td{background:var(--surface-2)}
+  td.key{position:sticky;left:0;z-index:3;border-right:1px solid var(--line)}
+  tr.done td.key{box-shadow:inset 3px 0 0 var(--ok)}
+  tr.done .idx{color:var(--ok)}
+  td input[type="text"]{font:inherit;font-size:13px;color:var(--ink);width:100%;border:0;
+    background:transparent;padding:12px 8px;border-radius:7px}
+  td input::placeholder,td textarea::placeholder{color:color-mix(in srgb,var(--muted) 60%,transparent)}
+  td input[type="text"]:focus,td textarea:focus{background:var(--accent-soft);outline:none}
+  td.url input,td.link input{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11.5px;color:var(--ink-2)}
+  td.url input.empty{background:repeating-linear-gradient(135deg,transparent,transparent 5px,color-mix(in srgb,var(--warn) 12%,transparent) 5px,color-mix(in srgb,var(--warn) 12%,transparent) 10px)}
+  td.url input.empty:focus{background:var(--accent-soft)}
+  .cell{display:flex;align-items:center;gap:2px;padding-right:4px}
+  td.key .cell{gap:6px;padding-left:10px}
+  .idx{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted);
+    min-width:20px;font-variant-numeric:tabular-nums}
+
+  .chk{appearance:none;-webkit-appearance:none;width:18px;height:18px;flex:none;cursor:pointer;
+    border:1.5px solid var(--line-strong);border-radius:5px;background:var(--surface);
+    display:grid;place-items:center;transition:background .12s,border-color .12s}
+  .chk:hover{border-color:var(--ok)}
+  .chk:checked{background:var(--ok);border-color:var(--ok)}
+  .chk:checked::after{content:"✓";color:#fff;font-size:11px;font-weight:700;line-height:1}
+  :root[data-theme="dark"] .chk:checked::after{color:#0D2019}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .chk:checked::after{color:#0D2019}}
+
+  .iconbtn{flex:none;width:26px;height:26px;border:0;background:transparent;border-radius:7px;cursor:pointer;
+    color:var(--muted);display:grid;place-items:center;font-size:13px;line-height:1}
+  .iconbtn:hover{background:var(--accent-soft);color:var(--accent)}
+  .iconbtn.del:hover{background:color-mix(in srgb,var(--yt) 15%,transparent);color:var(--yt)}
+  .iconbtn.armed{background:var(--yt);color:#fff;width:auto;padding:0 8px;font-size:11px;font-weight:600}
+  .iconbtn.ok{color:var(--ok)}
+
+  td.plat-cell{padding:6px 10px 6px 6px}
+  .msel{width:100%;min-height:36px;display:flex;align-items:center;gap:6px;cursor:pointer;
+    font:inherit;text-align:left;background:transparent;border:1px solid transparent;
+    border-radius:8px;padding:4px 6px;color:var(--ink)}
+  .msel:hover{border-color:var(--line-strong);background:var(--surface-2)}
+  .msel[aria-expanded="true"]{border-color:var(--accent);background:var(--accent-soft)}
+  .msel .caret{margin-left:auto;color:var(--muted);font-size:10px;flex:none}
+  .plats{display:flex;flex-wrap:wrap;gap:4px;min-width:0}
+  .plat{display:inline-flex;align-items:center;font-size:10px;font-weight:600;letter-spacing:.05em;
+    text-transform:uppercase;font-family:"Archivo",sans-serif;padding:3px 7px;border-radius:5px;white-space:nowrap}
+  .plat.tt{color:var(--tt);background:color-mix(in srgb,var(--tt) 14%,transparent)}
+  .plat.ig{color:var(--ig);background:color-mix(in srgb,var(--ig) 12%,transparent)}
+  .plat.yt{color:var(--yt);background:color-mix(in srgb,var(--yt) 12%,transparent)}
+  .plat.fb{color:var(--fb);background:color-mix(in srgb,var(--fb) 13%,transparent)}
+  .plat.th{color:var(--th);background:color-mix(in srgb,var(--th) 15%,transparent)}
+  .plat.x{color:var(--x);background:color-mix(in srgb,var(--x) 13%,transparent)}
+  .plat.otro{color:var(--otro);background:color-mix(in srgb,var(--otro) 15%,transparent)}
+  .plat.none{color:var(--muted);background:transparent;border:1px dashed var(--line-strong)}
+
+  .pop{position:fixed;z-index:80;background:var(--surface);border:1px solid var(--line-strong);
+    border-radius:12px;box-shadow:var(--pop-shadow);padding:6px;min-width:196px;max-height:320px;overflow:auto}
+  .pop h4{margin:4px 8px 6px;font-family:"Archivo",sans-serif;font-size:10px;letter-spacing:.09em;
+    text-transform:uppercase;color:var(--muted);font-weight:600}
+  .popopt{display:flex;align-items:center;gap:9px;padding:7px 9px;border-radius:8px;cursor:pointer;font-size:13px}
+  .popopt:hover{background:var(--surface-2)}
+  .popopt .chk{width:16px;height:16px}
+  .popopt .chk:checked{background:var(--accent);border-color:var(--accent)}
+  .popopt .chk:checked::after{color:#fff}
+  :root[data-theme="dark"] .popopt .chk:checked::after{color:#15121F}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .popopt .chk:checked::after{color:#15121F}}
+
+  td.copy{padding:6px 8px 6px 4px}
+  td.copy .cell{align-items:flex-start;gap:4px}
+  td textarea{font:inherit;font-size:12.5px;line-height:1.45;color:var(--ink);width:100%;
+    border:1px solid transparent;background:transparent;border-radius:8px;padding:8px;resize:none;
+    height:52px;transition:height .15s ease}
+  td textarea:hover{border-color:var(--line-strong)}
+  td textarea:focus{height:150px;border-color:var(--accent)}
+
+  .empty{padding:48px 20px;text-align:center;color:var(--muted)}
+  .empty p{margin:0 0 14px}
+
+  footer.legend{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px 20px;
+    align-items:center;color:var(--muted);font-size:12px}
+  footer.legend strong{color:var(--ink-2)}
+  footer.legend .sep{flex:1 1 auto}
+
+  @media (max-width:860px){
+    .shell{padding-block:20px 48px}
+    .stats{margin-left:0;width:100%}
+    .stat{flex:1 1 0;min-width:0}
+    input.search{min-width:0;width:100%}
+    .field.grow{width:100%}
+    .tablewrap{overflow:visible;max-height:none;min-height:0;background:transparent;border:0;box-shadow:none;border-radius:0}
+    table{min-width:0;width:100%;display:block}
+    thead{display:none}
+    tbody{display:block}
+    tbody tr{display:block;background:var(--surface);border:1px solid var(--line);
+      border-radius:13px;margin-bottom:12px;overflow:hidden;box-shadow:var(--shadow)}
+    tbody tr:hover td{background:var(--surface)}
+    tr.done{border-color:var(--ok)}
+    td{display:grid;grid-template-columns:104px 1fr;align-items:center;gap:6px;
+      border-bottom:1px solid var(--line);padding:2px 12px 2px 0}
+    td::before{content:attr(data-label);font-size:10px;text-transform:uppercase;letter-spacing:.07em;
+      color:var(--muted);font-family:"Archivo",sans-serif;font-weight:600;padding-left:12px}
+    td.key{position:static;border-right:0}
+    tr.done td.key{box-shadow:none}
+    td.key .cell{padding-left:0}
+    td input[type="text"]{padding:9px 0}
+    td.plat-cell,td.copy{padding:6px 12px 6px 0}
+    td textarea{height:64px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<div class="shell">
+  <header class="top">
+    <div class="brandmark">
+      <span class="logo"><img src="spicy_logo_firma.png" alt="Spicy Marketing" width="300" height="180"></span>
+      <div>
+        <h1>Base de Contenido</h1>
+        <p class="sub">Campañas, creadores, copys y piezas publicadas. Escribe directo en la tabla: se guarda solo.</p>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b id="s-total">0</b><span>Piezas</span></div>
+      <div class="stat good"><b id="s-pub">0</b><span>Publicadas</span></div>
+      <div class="stat"><b id="s-creadores">0</b><span>Creadores</span></div>
+      <div class="stat"><b id="s-marcas">0</b><span>Marcas</span></div>
+      <div class="stat flag"><b id="s-pend">0</b><span>URL pendiente</span></div>
+    </div>
+  </header>
+
+  <div id="notice" class="notice" hidden></div>
+
+  <div class="toolbar">
+    <div class="field grow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input class="search" id="q" type="search" placeholder="Buscar campaña, creador, marca, copy…" autocomplete="off">
+    </div>
+    <select class="filter" id="f-estado">
+      <option value="">Publicadas y pendientes</option>
+      <option value="si">Solo publicadas</option>
+      <option value="no">Solo pendientes</option>
+    </select>
+    <select class="filter" id="f-marca"><option value="">Todas las marcas</option></select>
+    <select class="filter" id="f-creador"><option value="">Todos los creadores</option></select>
+    <select class="filter" id="f-plat"><option value="">Toda plataforma</option></select>
+    <span class="saveflag" id="saveflag"></span>
+    <button class="btn" id="import">Importar CSV</button>
+    <button class="btn" id="csv">Descargar CSV</button>
+    <button class="btn primary" id="add">+ Nueva fila</button>
+    <input type="file" id="file" accept=".csv,text/csv" hidden>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <colgroup>
+        <col style="width:262px"><col style="width:310px"><col style="width:200px">
+        <col style="width:140px"><col style="width:200px"><col style="width:150px">
+        <col style="width:150px"><col style="width:185px"><col style="width:200px">
+        <col style="width:200px"><col style="width:170px"><col style="width:300px"><col style="width:46px">
+      </colgroup>
+      <thead>
+        <tr>
+          <th class="key">✓ Publicado · Campaña</th>
+          <th>Producto promovido</th>
+          <th>URL del producto</th>
+          <th>Marca</th>
+          <th>URL de la marca</th>
+          <th>Agencia</th>
+          <th>Creador</th>
+          <th>Plataforma</th>
+          <th>Link TikTok</th>
+          <th>Link Instagram</th>
+          <th>Otro link</th>
+          <th>Copy</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+  <div class="empty" id="emptystate" hidden><p>Nada coincide con el filtro.</p><button class="btn" id="clearf">Limpiar filtros</button></div>
+
+  <footer class="legend">
+    <span>Marca el <strong>✓</strong> cuando la pieza ya esté publicada.</span>
+    <span>La <strong>plataforma</strong> admite varias opciones.</span>
+    <span>Se guarda en <strong>este navegador</strong>: usa <strong>Descargar CSV</strong> para respaldar o compartir.</span>
+    <span class="sep"></span>
+    <button class="btn quiet" id="reset">Restablecer datos iniciales</button>
+  </footer>
+</div>
+
+<div class="pop" id="platpop" hidden role="dialog" aria-label="Elegir plataformas"></div>
+
+<script id="seed" type="application/json">[
+{
+"id": "r001",
+"orden": 10,
+"publicado": false,
+"campania": "Acne",
+"producto": "Truly Targeted Overnight Blemish Patch",
+"urlProducto": "https://www.kiehls.com.mx/mas-vendidos/descubre/lo-nuevo/pimple-patch-truly-targeted-overnight-blemish-patch-KHMX0366KIE.html",
+"marca": "Kiehl's",
+"urlMarca": "https://www.kiehls.com.mx/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAafITTwbis4B_KqiMgr3i-SeJByxEwSjHhqeAtjPhsn5LbG45rBkQ1KG6wsvbg_aem_g0WDiCmdK8wh0UBYmSY4Zw",
+"agencia": "BeGroup",
+"creador": "Brenda Jair",
+"plataformas": [
+"tt",
+"ig"
+],
+"linkTT": "",
+"linkIG": "https://www.instagram.com/reels/DZDNYMMonHa/",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r002",
+"orden": 20,
+"publicado": false,
+"campania": "Uriage",
+"producto": "BARIUESUN STICK SOLAR INVISIBLE",
+"urlProducto": "",
+"marca": "Uriage",
+"urlMarca": "https://www.uriage.com",
+"agencia": "Puig",
+"creador": "Marifer Bru",
+"plataformas": [
+"ig"
+],
+"linkTT": "",
+"linkIG": "https://www.instagram.com/reels/DX0YsmeMJ8l/",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r003",
+"orden": 30,
+"publicado": false,
+"campania": "Uriage",
+"producto": "",
+"urlProducto": "",
+"marca": "Uriage",
+"urlMarca": "https://www.uriage.com",
+"agencia": "Puig",
+"creador": "Miranda Carricart",
+"plataformas": [
+"ig"
+],
+"linkTT": "",
+"linkIG": "https://www.instagram.com/reels/DX2Rnogtano/",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r004",
+"orden": 40,
+"publicado": false,
+"campania": "Shark FlexBreeze",
+"producto": "Shark FlexBreeze",
+"urlProducto": "",
+"marca": "Shark Beauty",
+"urlMarca": "https://www.sharkbeauty.com",
+"agencia": "Influur",
+"creador": "Brenda Jair",
+"plataformas": [
+"ig"
+],
+"linkTT": "",
+"linkIG": "https://www.instagram.com/reels/DY0cFGGo_W8/",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r005",
+"orden": 50,
+"publicado": false,
+"campania": "Air Plush Lip & Cheek Cream",
+"producto": "Air Plush Lip & Cheek Cream",
+"urlProducto": "",
+"marca": "SHEGLAM",
+"urlMarca": "https://www.sheglam.com",
+"agencia": "",
+"creador": "Vicca",
+"plataformas": [
+"tt"
+],
+"linkTT": "https://www.tiktok.com/@vicca.gr/video/7642758273355091220",
+"linkIG": "",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r006",
+"orden": 60,
+"publicado": false,
+"campania": "Acid Turmeric Toner Pad",
+"producto": "Acid Turmeric Toner Pad",
+"urlProducto": "",
+"marca": "Dr.Melaxi",
+"urlMarca": "",
+"agencia": "",
+"creador": "Brenda Jair",
+"plataformas": [
+"ig"
+],
+"linkTT": "",
+"linkIG": "https://www.instagram.com/reels/DZtkxx7usuV/",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r007",
+"orden": 70,
+"publicado": false,
+"campania": "FreeReel",
+"producto": "FreeReel",
+"urlProducto": "",
+"marca": "FreeReel",
+"urlMarca": "",
+"agencia": "Exportilis Technology",
+"creador": "Vicca",
+"plataformas": [
+"tt"
+],
+"linkTT": "https://www.tiktok.com/@vicca.gr/video/7639897097868725525",
+"linkIG": "",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r008",
+"orden": 80,
+"publicado": false,
+"campania": "Huawei Watch Fit 5",
+"producto": "Huawei Watch Fit 5",
+"urlProducto": "",
+"marca": "Huawei",
+"urlMarca": "https://www.huawei.com",
+"agencia": "B&W",
+"creador": "Brenda Jair",
+"plataformas": [
+"tt"
+],
+"linkTT": "https://www.tiktok.com/@brenda_jair/video/7642103761787161863",
+"linkIG": "",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r009",
+"orden": 90,
+"publicado": false,
+"campania": "Avon 140 años",
+"producto": "",
+"urlProducto": "",
+"marca": "Avon",
+"urlMarca": "https://www.avon.com",
+"agencia": "FCO Group",
+"creador": "Brenda Jair",
+"plataformas": [
+"ig"
+],
+"linkTT": "",
+"linkIG": "https://www.instagram.com/reels/DYX6p81IqYG/",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r010",
+"orden": 100,
+"publicado": false,
+"campania": "Shark Beauty Face Pro Glow",
+"producto": "Face Pro Glow",
+"urlProducto": "",
+"marca": "Shark Beauty",
+"urlMarca": "https://www.sharkbeauty.com",
+"agencia": "Influur",
+"creador": "Gabriel Cabrera",
+"plataformas": [
+"tt",
+"ig"
+],
+"linkTT": "https://www.tiktok.com/@dr.gabush/video/7653211773616590100",
+"linkIG": "https://www.instagram.com/reels/DZIwmLvy9Gp/",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r011",
+"orden": 110,
+"publicado": false,
+"campania": "Prorganics",
+"producto": "",
+"urlProducto": "",
+"marca": "Prorganics",
+"urlMarca": "",
+"agencia": "Grupoagc Mx",
+"creador": "Brenda Jair",
+"plataformas": [
+"tt",
+"ig"
+],
+"linkTT": "https://www.tiktok.com/@brenda_jair/video/7653602955882401031",
+"linkIG": "https://www.instagram.com/reels/DZ0uUp8oOUm/",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r012",
+"orden": 120,
+"publicado": false,
+"campania": "Huawei Watch Fit 5 PRO",
+"producto": "Huawei Watch Fit 5 Pro",
+"urlProducto": "",
+"marca": "Huawei",
+"urlMarca": "https://www.huawei.com",
+"agencia": "B&W",
+"creador": "Diego Moran Rivera",
+"plataformas": [
+"tt"
+],
+"linkTT": "https://www.tiktok.com/@diego.m0ran/video/7649353873232235794",
+"linkIG": "",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r013",
+"orden": 130,
+"publicado": false,
+"campania": "Anker Solix PD 26",
+"producto": "Anker Solix PD 26",
+"urlProducto": "",
+"marca": "Anker",
+"urlMarca": "https://www.anker.com",
+"agencia": "Ale HK Pear Tech",
+"creador": "Twobitdavinci",
+"plataformas": [
+"yt"
+],
+"linkTT": "",
+"linkIG": "",
+"linkOtro": "https://www.youtube.com/watch?v=X6WF1BJt-3A",
+"copy": ""
+},
+{
+"id": "r014",
+"orden": 140,
+"publicado": false,
+"campania": "Anker Solix E10",
+"producto": "Anker Solix E10",
+"urlProducto": "",
+"marca": "Anker",
+"urlMarca": "https://www.anker.com",
+"agencia": "Ale HK Pear Tech",
+"creador": "Southern Adventures",
+"plataformas": [
+"yt"
+],
+"linkTT": "",
+"linkIG": "",
+"linkOtro": "https://www.youtube.com/watch?v=p-txteF56yI",
+"copy": ""
+},
+{
+"id": "r015",
+"orden": 150,
+"publicado": false,
+"campania": "Bariesun Stick Solar Invisible",
+"producto": "Bariésun Stick Solar Invisible",
+"urlProducto": "",
+"marca": "Uriage",
+"urlMarca": "https://www.uriage.com",
+"agencia": "Puig",
+"creador": "awesomeactioncat_",
+"plataformas": [
+"ig"
+],
+"linkTT": "",
+"linkIG": "https://www.instagram.com/reels/DZns_-kP6n2/",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r016",
+"orden": 160,
+"publicado": false,
+"campania": "Bariesun Stick Solar Invisible",
+"producto": "Bariésun Stick Solar Invisible",
+"urlProducto": "",
+"marca": "Uriage",
+"urlMarca": "https://www.uriage.com",
+"agencia": "Puig",
+"creador": "Dany Reyes",
+"plataformas": [
+"ig"
+],
+"linkTT": "",
+"linkIG": "https://www.instagram.com/reels/DZ_Tlh6Pf30/",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r017",
+"orden": 170,
+"publicado": false,
+"campania": "Dermopure Clinical",
+"producto": "DermoPure Clinical",
+"urlProducto": "",
+"marca": "Eucerin",
+"urlMarca": "https://www.eucerin.com",
+"agencia": "Bcentral",
+"creador": "Brenda Jair",
+"plataformas": [
+"ig"
+],
+"linkTT": "",
+"linkIG": "https://www.instagram.com/reels/DZ_LSWrIMvP/",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r018",
+"orden": 180,
+"publicado": false,
+"campania": "Dermopure Clinical",
+"producto": "DermoPure Clinical",
+"urlProducto": "",
+"marca": "Eucerin",
+"urlMarca": "https://www.eucerin.com",
+"agencia": "DW Entertainment & Media",
+"creador": "Michelle Gomez",
+"plataformas": [
+"tt"
+],
+"linkTT": "https://www.tiktok.com/@michhellegomez/video/7651765770476719381",
+"linkIG": "",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r019",
+"orden": 190,
+"publicado": false,
+"campania": "Bariesun Aqua Fluido",
+"producto": "Bariésun Aqua Fluido",
+"urlProducto": "",
+"marca": "Uriage",
+"urlMarca": "https://www.uriage.com",
+"agencia": "Puig",
+"creador": "Celeste Lara",
+"plataformas": [
+"ig"
+],
+"linkTT": "",
+"linkIG": "https://www.instagram.com/reels/DZ8HzYYJyMf/",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r020",
+"orden": 200,
+"publicado": false,
+"campania": "Kotex Slim",
+"producto": "Kotex Slim",
+"urlProducto": "",
+"marca": "Kotex",
+"urlMarca": "https://www.kotex.com",
+"agencia": "Hypeinfluence",
+"creador": "Brenda Jair",
+"plataformas": [
+"ig"
+],
+"linkTT": "",
+"linkIG": "https://www.instagram.com/reels/DZ6M--looAy/",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r021",
+"orden": 210,
+"publicado": false,
+"campania": "Cushion Foundation Campaign",
+"producto": "Cushion Foundation",
+"urlProducto": "",
+"marca": "SHEGLAM",
+"urlMarca": "https://www.sheglam.com",
+"agencia": "",
+"creador": "Vicca",
+"plataformas": [
+"tt"
+],
+"linkTT": "https://www.tiktok.com/@vicca.gr/video/7665145595224411413",
+"linkIG": "",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r022",
+"orden": 220,
+"publicado": false,
+"campania": "Kueski UGC",
+"producto": "",
+"urlProducto": "",
+"marca": "Kueski",
+"urlMarca": "https://www.kueski.com",
+"agencia": "LOI Digital",
+"creador": "Fer Goni",
+"plataformas": [
+"tt"
+],
+"linkTT": "https://www.tiktok.com/@fer.goni/video/7662152115774688533",
+"linkIG": "",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r023",
+"orden": 230,
+"publicado": false,
+"campania": "Dola AI",
+"producto": "Dola AI",
+"urlProducto": "",
+"marca": "Dola AI",
+"urlMarca": "",
+"agencia": "Gnet",
+"creador": "Fer Goni",
+"plataformas": [
+"tt"
+],
+"linkTT": "https://www.tiktok.com/@fer.goni/video/7667642399585242388",
+"linkIG": "",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r024",
+"orden": 240,
+"publicado": false,
+"campania": "Dola AI",
+"producto": "Dola AI",
+"urlProducto": "",
+"marca": "Dola AI",
+"urlMarca": "",
+"agencia": "Enet Technology",
+"creador": "Ale Trejo",
+"plataformas": [
+"tt"
+],
+"linkTT": "https://www.tiktok.com/@ale_trejo6/video/7658407250188438792",
+"linkIG": "",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r025",
+"orden": 250,
+"publicado": false,
+"campania": "Dola AI",
+"producto": "Dola AI",
+"urlProducto": "",
+"marca": "Dola AI",
+"urlMarca": "",
+"agencia": "Enet Technology",
+"creador": "Boolypam",
+"plataformas": [
+"tt"
+],
+"linkTT": "https://www.tiktok.com/@boolypam/video/7660247112453557525",
+"linkIG": "",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r026",
+"orden": 260,
+"publicado": false,
+"campania": "Honkai Star Rail 4.4 DE",
+"producto": "Honkai: Star Rail v4.4",
+"urlProducto": "",
+"marca": "HoYoverse",
+"urlMarca": "https://hsr.hoyoverse.com",
+"agencia": "Ale HK Pear Tech",
+"creador": "Mika",
+"plataformas": [
+"ig"
+],
+"linkTT": "",
+"linkIG": "https://www.instagram.com/reels/Da29X3mtHnL/",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r027",
+"orden": 270,
+"publicado": false,
+"campania": "Honkai Star Rail's V4.4",
+"producto": "Honkai: Star Rail v4.4",
+"urlProducto": "",
+"marca": "HoYoverse",
+"urlMarca": "https://hsr.hoyoverse.com",
+"agencia": "Ale HK Pear Tech",
+"creador": "Fernanda Tavassi",
+"plataformas": [
+"tt"
+],
+"linkTT": "https://www.tiktok.com/@fernandatavassi/video/7662882094070205704",
+"linkIG": "",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r028",
+"orden": 280,
+"publicado": false,
+"campania": "Honkai Star Rail 4.4",
+"producto": "Honkai: Star Rail v4.4",
+"urlProducto": "",
+"marca": "HoYoverse",
+"urlMarca": "https://hsr.hoyoverse.com",
+"agencia": "Ale HK Pear Tech",
+"creador": "Tani Pinta",
+"plataformas": [
+"ig"
+],
+"linkTT": "",
+"linkIG": "https://www.instagram.com/reels/Da6WtOQMx3C/",
+"linkOtro": "",
+"copy": ""
+},
+{
+"id": "r029",
+"orden": 290,
+"publicado": false,
+"campania": "Power Foundation",
+"producto": "Power Foundation",
+"urlProducto": "",
+"marca": "TIMEPHORIA",
+"urlMarca": "",
+"agencia": "",
+"creador": "Brenda Jair",
+"plataformas": [
+"tt"
+],
+"linkTT": "https://www.tiktok.com/@brenda_jair/video/7665421121902120210",
+"linkIG": "",
+"linkOtro": "",
+"copy": ""
+}
+]</script>
+<script>
+(function(){
+  "use strict";
+
+  var STORE_KEY = "spicy.baseContenido.v1";
+
+  var PLATFORMS = [
+    {v:"tt",   label:"TikTok"},
+    {v:"ig",   label:"Instagram"},
+    {v:"yt",   label:"YouTube"},
+    {v:"fb",   label:"Facebook"},
+    {v:"th",   label:"Threads"},
+    {v:"x",    label:"X"},
+    {v:"otro", label:"Otro"}
+  ];
+  var PLAT_LABEL = {}, LABEL_PLAT = {};
+  PLATFORMS.forEach(function(p){
+    PLAT_LABEL[p.v] = p.label;
+    LABEL_PLAT[p.label.toLowerCase()] = p.v;
+  });
+
+  var FIELDS = [
+    {key:"campania",    label:"Campaña",        cls:"key",       type:"text",     ph:"Campaña"},
+    {key:"producto",    label:"Producto",       cls:"",          type:"text",     ph:"¿Qué producto se promueve?"},
+    {key:"urlProducto", label:"URL producto",   cls:"url",       type:"text",     ph:"Página del producto"},
+    {key:"marca",       label:"Marca",          cls:"",          type:"text",     ph:"Marca"},
+    {key:"urlMarca",    label:"URL marca",      cls:"url",       type:"text",     ph:"Sitio de la marca"},
+    {key:"agencia",     label:"Agencia",        cls:"",          type:"text",     ph:"Agencia"},
+    {key:"creador",     label:"Creador",        cls:"",          type:"text",     ph:"Creador"},
+    {key:"plataformas", label:"Plataforma",     cls:"plat-cell", type:"multi"},
+    {key:"linkTT",      label:"Link TikTok",    cls:"link",      type:"text",     ph:"tiktok.com/@…"},
+    {key:"linkIG",      label:"Link Instagram", cls:"link",      type:"text",     ph:"instagram.com/reels/…"},
+    {key:"linkOtro",    label:"Otro link",      cls:"link",      type:"text",     ph:"YouTube u otro"},
+    {key:"copy",        label:"Copy",           cls:"copy",      type:"textarea", ph:"Texto que acompaña la publicación…"}
+  ];
+  var URL_FIELDS = ["urlProducto", "urlMarca"];
+  var TEXT_KEYS = FIELDS.filter(function(f){ return f.type === "text" || f.type === "textarea"; })
+                        .map(function(f){ return f.key; });
+  var CSV_COLS = [
+    {head:"Publicado",          key:"publicado"},
+    {head:"Campaña",            key:"campania"},
+    {head:"Producto promovido", key:"producto"},
+    {head:"URL del producto",   key:"urlProducto"},
+    {head:"Marca",              key:"marca"},
+    {head:"URL de la marca",    key:"urlMarca"},
+    {head:"Agencia",            key:"agencia"},
+    {head:"Creador",            key:"creador"},
+    {head:"Plataforma",         key:"plataformas"},
+    {head:"Link TikTok",        key:"linkTT"},
+    {head:"Link Instagram",     key:"linkIG"},
+    {head:"Otro link",          key:"linkOtro"},
+    {head:"Copy",               key:"copy"}
+  ];
+
+  var tbody = document.getElementById("tbody");
+  var noticeEl = document.getElementById("notice");
+  var saveflag = document.getElementById("saveflag");
+  var qEl = document.getElementById("q");
+  var fEstado = document.getElementById("f-estado");
+  var fMarca = document.getElementById("f-marca");
+  var fCreador = document.getElementById("f-creador");
+  var fPlat = document.getElementById("f-plat");
+  var emptyState = document.getElementById("emptystate");
+  var pop = document.getElementById("platpop");
+
+  var SEED = [];
+  try { SEED = JSON.parse(document.getElementById("seed").textContent) || []; }
+  catch (e){ SEED = []; }
+
+  var rows = [], byId = Object.create(null), rowEls = Object.create(null);
+  var saveTimer = null, storageOK = true;
+
+  /* ---------- helpers ---------- */
+  function platsOf(r){
+    var v = r.plataformas;
+    return Array.isArray(v) ? v.filter(function(p){ return PLAT_LABEL[p]; }) : [];
+  }
+  function notice(html, tone){
+    noticeEl.innerHTML = html + ' <button type="button" aria-label="Cerrar">✕</button>';
+    noticeEl.hidden = false;
+    noticeEl.querySelector("button").addEventListener("click", function(){ noticeEl.hidden = true; });
+  }
+  function blank(){
+    var r = {publicado:false, plataformas:[]};
+    TEXT_KEYS.forEach(function(k){ r[k] = ""; });
+    return r;
+  }
+  function normalize(raw, i){
+    var r = blank();
+    Object.keys(raw || {}).forEach(function(k){ r[k] = raw[k]; });
+    r.id = raw && raw.id ? String(raw.id) : newId();
+    r.orden = Number(raw && raw.orden) || (i + 1) * 10;
+    r.publicado = !!r.publicado;
+    r.plataformas = platsOf(r);
+    TEXT_KEYS.forEach(function(k){ r[k] = r[k] == null ? "" : String(r[k]); });
+    return r;
+  }
+
+  /* ---------- storage ---------- */
+  function readStore(){
+    try {
+      var raw = localStorage.getItem(STORE_KEY);
+      if (!raw) return null;
+      var parsed = JSON.parse(raw);
+      return Array.isArray(parsed) && parsed.length ? parsed : null;
+    } catch (e){ return null; }
+  }
+  function writeStore(){
+    if (!storageOK) return;
+    try {
+      localStorage.setItem(STORE_KEY, JSON.stringify(rows));
+      saveflag.textContent = "guardado";
+      saveflag.className = "saveflag";
+    } catch (e){
+      storageOK = false;
+      saveflag.textContent = "";
+      notice("<div><strong>No se pudo guardar en este navegador.</strong> Puede estar en modo privado o sin espacio. Descarga el CSV para no perder los cambios.</div>");
+    }
+  }
+  function scheduleSave(){
+    if (!storageOK) return;
+    saveflag.textContent = "guardando…";
+    saveflag.className = "saveflag on";
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(writeStore, 400);
+  }
+  function change(id, key, value){
+    if (byId[id]) byId[id][key] = value;
+    refreshDerived(id);
+    computeStats();
+    scheduleSave();
+  }
+
+  /* ---------- platform popover ---------- */
+  var popRowId = null;
+  (function buildPop(){
+    var h = document.createElement("h4");
+    h.textContent = "Plataformas";
+    pop.appendChild(h);
+    PLATFORMS.forEach(function(p){
+      var lab = document.createElement("label");
+      lab.className = "popopt";
+      var cb = document.createElement("input");
+      cb.type = "checkbox"; cb.className = "chk"; cb.value = p.v;
+      var sp = document.createElement("span");
+      sp.textContent = p.label;
+      lab.appendChild(cb); lab.appendChild(sp);
+      cb.addEventListener("change", onPopChange);
+      pop.appendChild(lab);
+    });
+  })();
+  function onPopChange(){
+    if (!popRowId) return;
+    var chosen = [];
+    PLATFORMS.forEach(function(p){
+      var cb = pop.querySelector('input[value="' + p.v + '"]');
+      if (cb && cb.checked) chosen.push(p.v);
+    });
+    change(popRowId, "plataformas", chosen);
+  }
+  function openPop(rowId, anchor){
+    popRowId = rowId;
+    var sel = platsOf(byId[rowId] || {});
+    pop.querySelectorAll('input[type="checkbox"]').forEach(function(cb){
+      cb.checked = sel.indexOf(cb.value) > -1;
+    });
+    pop.hidden = false;
+    anchor.setAttribute("aria-expanded", "true");
+    var r = anchor.getBoundingClientRect();
+    var w = pop.offsetWidth, h = pop.offsetHeight;
+    var left = Math.max(10, Math.min(r.left, window.innerWidth - w - 10));
+    var top = r.bottom + 6;
+    if (top + h > window.innerHeight - 10) top = Math.max(10, r.top - h - 6);
+    pop.style.left = left + "px";
+    pop.style.top = top + "px";
+  }
+  function closePop(){
+    if (pop.hidden) return;
+    pop.hidden = true;
+    popRowId = null;
+    document.querySelectorAll('.msel[aria-expanded="true"]').forEach(function(b){
+      b.setAttribute("aria-expanded", "false");
+    });
+  }
+  document.addEventListener("mousedown", function(e){
+    if (pop.hidden) return;
+    if (pop.contains(e.target) || (e.target.closest && e.target.closest(".msel"))) return;
+    closePop();
+  });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") closePop(); });
+  window.addEventListener("resize", closePop);
+  document.querySelector(".tablewrap").addEventListener("scroll", closePop, {passive:true});
+  window.addEventListener("scroll", closePop, {passive:true});
+
+  /* ---------- row building ---------- */
+  function openBtn(input){
+    var b = document.createElement("button");
+    b.className = "iconbtn"; b.type = "button"; b.title = "Abrir link"; b.textContent = "↗";
+    b.addEventListener("click", function(){
+      var v = (input.value || "").trim();
+      if (!v) return;
+      if (!/^https?:\/\//i.test(v)) v = "https://" + v;
+      window.open(v, "_blank", "noopener");
+    });
+    return b;
+  }
+  function copyBtn(ta){
+    var b = document.createElement("button");
+    b.className = "iconbtn"; b.type = "button"; b.title = "Copiar el texto"; b.textContent = "⧉";
+    b.addEventListener("click", function(){
+      var text = ta.value || "";
+      if (!text) return;
+      var done = function(ok){
+        b.textContent = ok ? "✓" : "✕";
+        b.classList.toggle("ok", ok);
+        setTimeout(function(){ b.textContent = "⧉"; b.classList.remove("ok"); }, 1400);
+      };
+      try {
+        navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ done(false); });
+      } catch (err){ done(false); }
+    });
+    return b;
+  }
+
+  function buildRow(r){
+    var tr = document.createElement("tr");
+    tr.dataset.id = r.id;
+
+    FIELDS.forEach(function(f){
+      var td = document.createElement("td");
+      td.className = f.cls;
+      td.setAttribute("data-label", f.label);
+      var wrap = document.createElement("div");
+      wrap.className = "cell";
+
+      if (f.cls === "key"){
+        var chk = document.createElement("input");
+        chk.type = "checkbox"; chk.className = "chk";
+        chk.dataset.key = "publicado";
+        chk.id = "c-" + r.id + "-publicado";
+        chk.title = "Marcar como publicado";
+        chk.setAttribute("aria-label", "Publicado");
+        chk.addEventListener("change", function(){ change(r.id, "publicado", chk.checked); });
+        wrap.appendChild(chk);
+        var idx = document.createElement("span");
+        idx.className = "idx";
+        wrap.appendChild(idx);
+      }
+
+      if (f.type === "multi"){
+        var btn = document.createElement("button");
+        btn.type = "button"; btn.className = "msel";
+        btn.setAttribute("aria-haspopup", "dialog");
+        btn.setAttribute("aria-expanded", "false");
+        var box = document.createElement("span");
+        box.className = "plats";
+        var caret = document.createElement("span");
+        caret.className = "caret"; caret.textContent = "▼";
+        btn.appendChild(box); btn.appendChild(caret);
+        btn.addEventListener("click", function(){
+          if (!pop.hidden && popRowId === r.id) closePop();
+          else { closePop(); openPop(r.id, btn); }
+        });
+        wrap.appendChild(btn);
+      } else if (f.type === "textarea"){
+        var ta = document.createElement("textarea");
+        ta.dataset.key = f.key;
+        ta.placeholder = f.ph;
+        ta.id = "c-" + r.id + "-" + f.key;
+        ta.rows = 2;
+        ta.addEventListener("input", function(){ change(r.id, f.key, ta.value); });
+        wrap.appendChild(ta);
+        wrap.appendChild(copyBtn(ta));
+      } else {
+        var input = document.createElement("input");
+        input.type = "text";
+        input.dataset.key = f.key;
+        input.placeholder = f.ph;
+        input.spellcheck = false;
+        input.id = "c-" + r.id + "-" + f.key;
+        input.addEventListener("input", function(){
+          input.title = input.value;
+          change(r.id, f.key, input.value);
+        });
+        wrap.appendChild(input);
+        if (f.cls === "url" || f.cls === "link") wrap.appendChild(openBtn(input));
+      }
+
+      td.appendChild(wrap);
+      tr.appendChild(td);
+    });
+
+    var act = document.createElement("td");
+    act.setAttribute("data-label", "");
+    var del = document.createElement("button");
+    del.className = "iconbtn del"; del.type = "button"; del.title = "Eliminar fila"; del.textContent = "×";
+    var armed = false, armTimer = null;
+    del.addEventListener("click", function(){
+      if (!armed){
+        armed = true;
+        del.classList.add("armed");
+        del.textContent = "Borrar";
+        armTimer = setTimeout(function(){
+          armed = false; del.classList.remove("armed"); del.textContent = "×";
+        }, 3000);
+        return;
+      }
+      clearTimeout(armTimer);
+      removeRow(r.id);
+    });
+    act.appendChild(del);
+    tr.appendChild(act);
+    return tr;
+  }
+
+  function refreshDerived(id){
+    var tr = rowEls[id], r = byId[id];
+    if (!tr || !r) return;
+    tr.classList.toggle("done", !!r.publicado);
+    var box = tr.querySelector(".plats");
+    if (box){
+      var ps = platsOf(r);
+      var want = ps.length ? ps.join(",") : "none";
+      if (box.dataset.state !== want){
+        box.dataset.state = want;
+        box.textContent = "";
+        if (!ps.length){
+          var none = document.createElement("span");
+          none.className = "plat none";
+          none.textContent = "Elegir";
+          box.appendChild(none);
+        } else {
+          ps.forEach(function(p){
+            var chip = document.createElement("span");
+            chip.className = "plat " + p;
+            chip.textContent = PLAT_LABEL[p];
+            box.appendChild(chip);
+          });
+        }
+      }
+    }
+    URL_FIELDS.forEach(function(k){
+      var input = tr.querySelector('input[data-key="' + k + '"]');
+      if (input) input.classList.toggle("empty", !(r[k] || "").trim());
+    });
+    applyFilterTo(tr, r);
+  }
+
+  function syncTable(){
+    var seen = Object.create(null);
+    rows.forEach(function(r, i){
+      var tr = rowEls[r.id];
+      if (!tr){ tr = buildRow(r); rowEls[r.id] = tr; }
+      TEXT_KEYS.forEach(function(k){
+        var el = tr.querySelector('[data-key="' + k + '"]');
+        if (!el) return;
+        var v = r[k] == null ? "" : String(r[k]);
+        if (document.activeElement !== el && el.value !== v) el.value = v;
+        if (el.tagName === "INPUT") el.title = v;
+      });
+      var chk = tr.querySelector('input[data-key="publicado"]');
+      if (chk) chk.checked = !!r.publicado;
+      var idx = tr.querySelector(".idx");
+      if (idx) idx.textContent = String(i + 1).padStart(2, "0");
+      var at = tbody.children[i];
+      if (at !== tr) tbody.insertBefore(tr, at || null);
+      refreshDerived(r.id);
+      seen[r.id] = 1;
+    });
+    Object.keys(rowEls).forEach(function(id){
+      if (!seen[id]){ rowEls[id].remove(); delete rowEls[id]; }
+    });
+    rebuildFilterOptions();
+    computeStats();
+    applyFilters();
+  }
+
+  /* ---------- filters + stats ---------- */
+  function uniqueSorted(key){
+    var set = Object.create(null);
+    rows.forEach(function(r){
+      var v = (r[key] || "").trim();
+      if (v) set[v] = 1;
+    });
+    return Object.keys(set).sort(function(a,b){ return a.localeCompare(b, "es"); });
+  }
+  function rebuildFilterOptions(){
+    [[fMarca, "marca", "Todas las marcas"], [fCreador, "creador", "Todos los creadores"]].forEach(function(spec){
+      var sel = spec[0], keep = sel.value, vals = uniqueSorted(spec[1]);
+      sel.innerHTML = "";
+      var o0 = document.createElement("option");
+      o0.value = ""; o0.textContent = spec[2];
+      sel.appendChild(o0);
+      vals.forEach(function(v){
+        var o = document.createElement("option");
+        o.value = v; o.textContent = v;
+        sel.appendChild(o);
+      });
+      sel.value = vals.indexOf(keep) > -1 ? keep : "";
+    });
+  }
+  (function fillPlatFilter(){
+    PLATFORMS.forEach(function(p){
+      var o = document.createElement("option");
+      o.value = p.v; o.textContent = p.label;
+      fPlat.appendChild(o);
+    });
+    var o = document.createElement("option");
+    o.value = "none"; o.textContent = "Sin plataforma";
+    fPlat.appendChild(o);
+  })();
+
+  function matches(r){
+    var q = qEl.value.trim().toLowerCase();
+    if (q){
+      var hay = TEXT_KEYS.map(function(k){ return r[k] || ""; }).join(" ");
+      hay += " " + platsOf(r).map(function(p){ return PLAT_LABEL[p]; }).join(" ");
+      if (hay.toLowerCase().indexOf(q) === -1) return false;
+    }
+    if (fEstado.value === "si" && !r.publicado) return false;
+    if (fEstado.value === "no" && r.publicado) return false;
+    if (fMarca.value && (r.marca || "").trim() !== fMarca.value) return false;
+    if (fCreador.value && (r.creador || "").trim() !== fCreador.value) return false;
+    if (fPlat.value){
+      var ps = platsOf(r);
+      if (fPlat.value === "none" ? ps.length > 0 : ps.indexOf(fPlat.value) === -1) return false;
+    }
+    return true;
+  }
+  function applyFilterTo(tr, r){ tr.hidden = !matches(r); }
+  function applyFilters(){
+    var shown = 0;
+    rows.forEach(function(r){
+      var tr = rowEls[r.id];
+      if (!tr) return;
+      var ok = matches(r);
+      tr.hidden = !ok;
+      if (ok) shown++;
+    });
+    emptyState.hidden = !(rows.length > 0 && shown === 0);
+    if (!emptyState.hidden) emptyState.querySelector("p").textContent = "Nada coincide con el filtro.";
+  }
+  function computeStats(){
+    document.getElementById("s-total").textContent = rows.length;
+    document.getElementById("s-pub").textContent = rows.filter(function(r){ return !!r.publicado; }).length;
+    document.getElementById("s-creadores").textContent = uniqueSorted("creador").length;
+    document.getElementById("s-marcas").textContent = uniqueSorted("marca").length;
+    document.getElementById("s-pend").textContent = rows.filter(function(r){
+      return URL_FIELDS.some(function(k){ return !(r[k] || "").trim(); });
+    }).length;
+  }
+
+  /* ---------- add / remove / reset ---------- */
+  function newId(){ return "r" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); }
+
+  function addRow(){
+    closePop();
+    var maxOrden = rows.reduce(function(m, r){ return Math.max(m, Number(r.orden) || 0); }, 0);
+    var r = blank();
+    r.id = newId();
+    r.orden = maxOrden + 10;
+    byId[r.id] = r;
+    rows.push(r);
+    qEl.value = ""; fEstado.value = ""; fMarca.value = ""; fCreador.value = ""; fPlat.value = "";
+    syncTable();
+    scheduleSave();
+    var first = rowEls[r.id] && rowEls[r.id].querySelector('input[data-key="campania"]');
+    if (first){ first.focus(); first.scrollIntoView({block:"center", behavior:"smooth"}); }
+  }
+  function removeRow(id){
+    if (popRowId === id) closePop();
+    rows = rows.filter(function(r){ return r.id !== id; });
+    delete byId[id];
+    if (rowEls[id]){ rowEls[id].remove(); delete rowEls[id]; }
+    syncTable();
+    scheduleSave();
+  }
+  function setRows(list){
+    rows = list.map(normalize);
+    byId = Object.create(null);
+    rows.forEach(function(r){ byId[r.id] = r; });
+    Object.keys(rowEls).forEach(function(id){ rowEls[id].remove(); delete rowEls[id]; });
+    tbody.textContent = "";
+    syncTable();
+    scheduleSave();
+  }
+
+  /* ---------- CSV ---------- */
+  function csvCell(v){
+    v = v == null ? "" : String(v);
+    return /[",\n;]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+  }
+  function toCSV(list){
+    var lines = [CSV_COLS.map(function(c){ return csvCell(c.head); }).join(",")];
+    list.forEach(function(r){
+      lines.push(CSV_COLS.map(function(c){
+        if (c.key === "publicado") return csvCell(r.publicado ? "Sí" : "No");
+        if (c.key === "plataformas") return csvCell(platsOf(r).map(function(p){ return PLAT_LABEL[p]; }).join(" + "));
+        return csvCell(r[c.key]);
+      }).join(","));
+    });
+    return "﻿" + lines.join("\r\n");
+  }
+  function downloadCSV(){
+    var blob = new Blob([toCSV(rows.filter(matches))], {type:"text/csv;charset=utf-8"});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    var d = new Date();
+    var stamp = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+    a.href = url;
+    a.download = "base-de-contenido-" + stamp + ".csv";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 2000);
+  }
+  function parseCSV(text){
+    text = text.replace(/^﻿/, "");
+    var out = [], row = [], field = "", i = 0, inQ = false;
+    while (i < text.length){
+      var c = text.charAt(i);
+      if (inQ){
+        if (c === '"'){
+          if (text.charAt(i + 1) === '"'){ field += '"'; i += 2; continue; }
+          inQ = false; i++; continue;
+        }
+        field += c; i++; continue;
+      }
+      if (c === '"'){ inQ = true; i++; continue; }
+      if (c === ","){ row.push(field); field = ""; i++; continue; }
+      if (c === "\r"){ i++; continue; }
+      if (c === "\n"){ row.push(field); out.push(row); row = []; field = ""; i++; continue; }
+      field += c; i++;
+    }
+    if (field.length || row.length){ row.push(field); out.push(row); }
+    return out.filter(function(r){
+      return r.some(function(cell){ return String(cell).trim() !== ""; });
+    });
+  }
+  function norm(s){
+    return String(s || "").toLowerCase().trim()
+      .normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+  function importCSV(text){
+    var grid = parseCSV(text);
+    if (grid.length < 2){
+      notice("<div>El archivo no tiene filas de datos.</div>");
+      return;
+    }
+    var headers = grid[0].map(norm);
+    var map = {};
+    CSV_COLS.forEach(function(c){
+      var at = headers.indexOf(norm(c.head));
+      if (at > -1) map[c.key] = at;
+    });
+    if (map.campania == null && map.producto == null){
+      notice("<div>No reconocí las columnas. Usa un CSV descargado desde aquí como plantilla.</div>");
+      return;
+    }
+    var list = grid.slice(1).map(function(cells, i){
+      var r = blank();
+      r.orden = (i + 1) * 10;
+      CSV_COLS.forEach(function(c){
+        var at = map[c.key];
+        if (at == null) return;
+        var raw = cells[at] == null ? "" : String(cells[at]).trim();
+        if (c.key === "publicado"){
+          r.publicado = ["si", "sí", "x", "true", "1", "yes"].indexOf(norm(raw)) > -1;
+        } else if (c.key === "plataformas"){
+          r.plataformas = raw.split(/[+,/]/).map(function(part){
+            return LABEL_PLAT[norm(part)] || null;
+          }).filter(Boolean);
+        } else {
+          r[c.key] = raw;
+        }
+      });
+      return r;
+    });
+    if (!confirm("Esto reemplaza las " + rows.length + " filas actuales por las " + list.length + " del archivo. ¿Continuar?")) return;
+    closePop();
+    setRows(list);
+    notice("<div>Se importaron <strong>" + list.length + "</strong> filas.</div>");
+  }
+
+  /* ---------- boot ---------- */
+  function start(){
+    document.getElementById("add").addEventListener("click", addRow);
+    document.getElementById("csv").addEventListener("click", downloadCSV);
+    var fileEl = document.getElementById("file");
+    document.getElementById("import").addEventListener("click", function(){ fileEl.click(); });
+    fileEl.addEventListener("change", function(){
+      var f = fileEl.files && fileEl.files[0];
+      if (!f) return;
+      var reader = new FileReader();
+      reader.onload = function(){ importCSV(String(reader.result || "")); fileEl.value = ""; };
+      reader.onerror = function(){ notice("<div>No se pudo leer el archivo.</div>"); fileEl.value = ""; };
+      reader.readAsText(f, "utf-8");
+    });
+    document.getElementById("reset").addEventListener("click", function(){
+      if (!confirm("Esto borra los cambios guardados en este navegador y vuelve a los " + SEED.length + " registros iniciales. ¿Continuar?")) return;
+      closePop();
+      setRows(JSON.parse(JSON.stringify(SEED)));
+    });
+    [qEl, fEstado, fMarca, fCreador, fPlat].forEach(function(el){
+      el.addEventListener("input", applyFilters);
+      el.addEventListener("change", applyFilters);
+    });
+    document.getElementById("clearf").addEventListener("click", function(){
+      qEl.value = ""; fEstado.value = ""; fMarca.value = ""; fCreador.value = ""; fPlat.value = "";
+      applyFilters();
+    });
+
+    var stored = readStore();
+    rows = (stored || JSON.parse(JSON.stringify(SEED))).map(normalize);
+    byId = Object.create(null);
+    rows.forEach(function(r){ byId[r.id] = r; });
+    syncTable();
+    if (!stored) writeStore();
+    else { saveflag.textContent = "guardado"; }
+
+    if (rows.length === 0){
+      emptyState.hidden = false;
+      emptyState.querySelector("p").textContent = "Todavía no hay filas. Empieza con una.";
+    }
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start);
+  else start();
+})();
+</script>
+</body>
+</html>

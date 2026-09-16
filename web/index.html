@@ -170,6 +170,8 @@
   .iconbtn.del:hover{background:color-mix(in srgb,var(--yt) 15%,transparent);color:var(--yt)}
   .iconbtn.armed{background:var(--yt);color:#fff;width:auto;padding:0 8px;font-size:11px;font-weight:600}
   .iconbtn.ok{color:var(--ok)}
+  a.iconbtn{text-decoration:none}
+  .iconbtn[aria-disabled="true"]{opacity:.3;pointer-events:none}
 
   td.plat-cell{padding:6px 10px 6px 6px}
   .msel{width:100%;min-height:36px;display:flex;align-items:center;gap:6px;cursor:pointer;
@@ -1081,15 +1083,27 @@
 
   /* ---------- row building ---------- */
   function openBtn(input){
-    var b = document.createElement("button");
-    b.className = "iconbtn"; b.type = "button"; b.title = "Abrir link"; b.textContent = "↗";
-    b.addEventListener("click", function(){
+    var a = document.createElement("a");
+    a.className = "iconbtn";
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.textContent = "↗";
+    a.title = "Abrir en una pestaña nueva";
+    a.setAttribute("aria-label", "Abrir link en una pestaña nueva");
+    function sync(){
       var v = (input.value || "").trim();
-      if (!v) return;
-      if (!/^https?:\/\//i.test(v)) v = "https://" + v;
-      window.open(v, "_blank", "noopener");
-    });
-    return b;
+      if (!v){
+        a.removeAttribute("href");
+        a.setAttribute("aria-disabled", "true");
+      } else {
+        a.href = /^https?:\/\//i.test(v) ? v : "https://" + v;
+        a.removeAttribute("aria-disabled");
+      }
+    }
+    input.addEventListener("input", sync);
+    input.__syncLink = sync;
+    sync();
+    return a;
   }
   function copyBtn(ta){
     var b = document.createElement("button");
@@ -1244,6 +1258,7 @@
         var v = r[k] == null ? "" : String(r[k]);
         if (document.activeElement !== el && el.value !== v) el.value = v;
         if (el.tagName === "INPUT") el.title = v;
+        if (el.__syncLink) el.__syncLink();
       });
       var chk = tr.querySelector('input[data-key="publicado"]');
       if (chk) chk.checked = !!r.publicado;
